@@ -1,0 +1,65 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .circle-container {
+    position: relative;
+    width: 480px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('images/wheel.svg'); /* Background circle */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .rotating-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    transition: transform 0.5s ease-in-out; /* Smooth rotation */
+  }
+  
+  .rotating-image {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+  
+  .slider-container {
+    width: 50%;
+  }
+  
+  .slider div {
+    padding: 10px;
+    background: #242323;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 16px;
+     color:#fff;
+    cursor: pointer;
+  }
+  .arrow{
+    position: absolute;
+  }
+
+
+
+
+
+
+
+
+
+

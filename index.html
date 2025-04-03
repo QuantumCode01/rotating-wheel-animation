@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+</head>
+<body>
+
+      
+    <div class="main-container">
+      <div class="circle-container">
+        <div class="rotating-circle">
+          <img src="images/rotatingwheel2.svg" alt="Rotating Image" class="rotating-image img-fluid">
+         
+        </div>
+        <div class="arrow"><svg width="302" height="302" viewBox="0 0 605 605" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="302.734" cy="301.886" r="226.695" fill="#F9F6ED" stroke="#CDA452" stroke-width="2"/>
+          <g transform="translate(-150, -150) scale(1.5)">
+            <path d="M276.741 315.77H270.476V295.311L262.24 315.77H259.524L251.288 295.311V315.77H245.067V286.549H253.785L260.882 304.204L267.979 286.549H276.741V315.77ZM295.731 316.295C286.837 316.295 282.544 311.301 282.544 304.116V286.549H288.853V303.897C288.853 307.971 291.218 310.775 295.731 310.775C300.243 310.775 302.565 307.971 302.565 303.897V286.549H308.917V304.072C308.917 311.345 304.624 316.295 295.731 316.295ZM320.895 315.77H314.674V286.549H320.895V315.77ZM332.917 315.77H326.696V286.549H332.917V315.77ZM362.375 315.77H355.234L349.495 305.387H344.938V315.77H338.718V286.549H352.386C358.476 286.549 362.199 290.535 362.199 295.968C362.199 301.137 358.957 303.897 355.803 304.642L362.375 315.77ZM351.466 299.911C353.963 299.911 355.847 298.421 355.847 295.968C355.847 293.514 353.963 292.025 351.466 292.025H344.938V299.911H351.466Z" fill="#BA8938"/>
+          </g>
+        </svg>
+        </div>
+      </div>
+     
+      <div class="slider-container">
+        <div class="slider">
+          <div>Red</div>
+          <div>Blue</div>
+          <div>Yellow</div>
+          <div>Green</div>
+          <div>Brown</div>
+        </div>
+      </div>
+      
+      </div>
+      
+
+
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+      
+      <script>
+$(document).ready(function () {
+  const rotatingCircle = document.querySelector(".rotating-circle");
+  const sections = [
+    "Research",
+    "Innovation",
+    "Venturing",
+    "Entrepreneurship",
+    "Training"
+  ];
+
+  let accumulatedAngle = 0; // To track the total rotation angle
+
+  // Initialize Slick Slider
+  $(".slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+  });
+
+  // Rotate the rotating-circle (both image and arrow) when the slide changes
+  $(".slider").on("afterChange", function (event, slick, currentSlide) {
+    const degreePerSection = 360 / sections.length; // Calculate degrees per section
+
+    // Accumulate the rotation angle
+    accumulatedAngle += degreePerSection;
+
+    // Rotate the rotating-circle container continuously
+    rotatingCircle.style.transform = `rotate(${accumulatedAngle}deg)`;
+  });
+});
+
+
+
+      </script>
+      
+</body>
+</html>
